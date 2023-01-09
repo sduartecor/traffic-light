@@ -95,20 +95,22 @@ const TrafficLight = () => {
           }
            //Si estan todos apagados seteo uno random
           else {
-            let number = Math.floor(Math.random() * 3) + 1;
+            let number = Math.floor(Math.random() * 4) + 1;
             if (number == 1){
               setColorGreen("0 0 15px 10px green");
             } else if (number == 2) {
               setColorRed("0 0 15px 10px red");
             } else if (number == 3) {
               setColorYellow("0 0 15px 10px yellow");
+            } else if (number == 4 && colorPurpleTF) {
+              setColorPurple("0 0 15px 10px purple");
             }
             
           }
         }
 
         let ocultar = true;
-        const newColor = (p) => {
+        const newColor = () => {
           if (ocultar==true) {
              ocultar=false;
              setColorPurpleView("");
@@ -135,19 +137,12 @@ const TrafficLight = () => {
          <div className="rounded-circle my-2"  onClick={() => onPruple()} style={{height: "80px", width: "80px",backgroundColor: "purple" ,display: colorPurpleView, boxShadow: colorPurple}}></div>
          </div>
 
-        
        </div>
        <div className="m-auto d-flex justify-content-center my-3"><button onClick={() => alternarColor()}>ALTERNAR</button></div>
        <div className="m-auto d-flex justify-content-center my-3"><button onClick={() => newColor({ocultar})}>NEW COLOR</button></div>
 
        </div>
 
-      
-       
-    
-
-       
-       
        </>
        
 
