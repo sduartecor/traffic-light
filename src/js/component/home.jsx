@@ -139,7 +139,7 @@ const TrafficLight = () => {
 
        </div>
        <div className="m-auto d-flex justify-content-center my-3"><button onClick={() => alternarColor()}>ALTERNAR</button></div>
-       <div className="m-auto d-flex justify-content-center my-3"><button onClick={() => newColor({ocultar})}>NEW COLOR</button></div>
+       <div className="m-auto d-flex justify-content-center my-3"><button onClick={() => newColor()}>NEW COLOR</button></div>
 
        </div>
 
