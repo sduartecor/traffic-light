@@ -1,26 +1,62 @@
-import React from "react";
+import React, {useState} from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+ 
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+const TrafficLight = () => {
 
-export default Home;
+    const [colorRed,setColorRed] = useState("none");
+    const [colorYellow,setColorYellow] = useState("none");
+    const [colorGreen,setColorGreen] = useState("none");
+
+
+   function onRed(){
+        if (colorRed == "none"){
+            setColorRed("0 0 15px 10px red");
+            setColorYellow("none");
+            setColorGreen("none");
+        } else {
+            setColorRed("none");
+        }
+      
+      }
+
+      function onYellow(){
+        if (colorYellow == "none"){
+            setColorYellow("0 0 15px 10px yellow");
+            setColorRed("none");
+            setColorGreen("none");
+        } else {
+            setColorYellow("none");
+        }
+      
+      }
+
+      function onGreen(){
+        if (colorGreen == "none"){
+            setColorGreen("0 0 15px 10px green");
+            setColorRed("none");
+            setColorYellow("none");
+        } else {
+            setColorGreen("none");
+        }
+
+      }
+
+     
+      
+
+  return (
+ 
+     <div className="container bg-dark d-flex align-items-center" style={{width: "100px", height: "270px"}}>
+        <div className="text-center">
+         <div className="rounded-circle bg-danger my-2" onClick= {onRed}style={{height: "80px", width: "80px", boxShadow: colorRed}}></div>
+         <div className="rounded-circle bg-warning  my-2" onClick= {onYellow} style={{height: "80px", width: "80px", boxShadow: colorYellow}}></div>
+         <div className="rounded-circle bg-success  my-2" onClick={onGreen} style={{height: "80px", width: "80px", boxShadow: colorGreen}}></div>
+         </div>     
+       </div>
+
+  );
+  };
+
+export default TrafficLight;
